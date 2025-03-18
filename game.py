@@ -70,7 +70,7 @@ class Game:
         print(str(self.bakaze_str()) + ' ' + str(self.taku.kyoku) + '局\n')
 
         self.taku.yama = self.taku.hai.copy()
-        #random.shuffle(self.taku.yama)
+        random.shuffle(self.taku.yama)
 
         for i in range(4):
             idx = (self.oya + i) % 4
@@ -214,8 +214,8 @@ class Game:
                     temp = input('和了しますか?(Y/N) : ')
                     if temp == 'Y' or temp == 'y':
                         agari = True
-                        win_tile = tsumohai
-                        tehai = janshi.tehai + [tsumohai]
+
+
                 else:
                     agari = True
                 if agari:
@@ -253,6 +253,10 @@ class Game:
                 janshi.lost_tenbou(1000)
                 self.taku.riibou += 1
                 janshi.riichi = True
+
+            elif janshi.riichi:
+                input('ツモ切りします(Press Enter) ')
+                sutehai = 13
 
             for other_idx in range(4):
                 if other_idx != idx and self.janshi[other_idx].can_ron(discarded_tile):

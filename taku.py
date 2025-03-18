@@ -14,7 +14,7 @@ class Taku:
             self.hai.append(hai.Hai(i, self.aka))
 
         self.yama = self.hai.copy()
-        #random.shuffle(self.yama)
+        random.shuffle(self.yama)
 
         self.kanctn = 0
         self.dora_hyouji = []
